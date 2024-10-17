@@ -8,6 +8,7 @@
 5. If your frames reach the server it will send ACK signal to client
 6. Stop the Program
 ## Client:
+```
 import socket
 s=socket.socket()
 s.bind(('localhost',8000))
@@ -26,13 +27,16 @@ while True:
      if ack:
         print(ack)
         i+=s
+```
 ## Server:
+```
 import socket
 s=socket.socket()
 s.connect(('localhost',8000))
 while True: 
  print(s.recv(1024).decode())
  s.send("acknowledgement recived from the server".encode())
+```
 ## OUPUT
 ## Client:
 ![image](https://github.com/priyadharshini210/2b_SLIDING_WINDOW_PROTOCOL/assets/148514638/c433eaf8-0ae4-4b27-922c-3c7f7f6dca24)
